@@ -1,0 +1,284 @@
+body {
+ background-color:lightgray;
+}
+.container{
+  background-color: #f2f2f2;
+}
+.card{
+border-radius: 15px;
+
+}
+
+.login {
+  padding: 60px 0;
+}
+
+.login form {
+  margin: 0 auto;
+  max-width: 320px;
+}
+.myForm {
+  margin-left: 400px;
+}
+.formH1 {
+  color: #060b26;
+  margin-left: 100px;
+}
+
+.loginButton {
+  margin-left: 650px;
+  width: 100px;
+  height: 30px;
+  background-color: #060b26;
+  align-content: center;
+  color: white;
+  border-radius: 10px;
+}
+.loginImage {
+  width: 100px;
+  height: 100px;
+}
+.row {
+  
+  display:flex;
+}
+.card {
+  
+  float: left;
+  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+/* .ccol-6 col-md-4 {
+  float: left;
+} */
+.input{
+  width: 400px;
+  height: 30px;
+  padding: 0;
+}
+
+.input-text {
+  width: 400px;
+  height: 100px;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.help-text {
+  height: 100px;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.myForm {
+  margin-left: 300px;
+  margin-top: 100px;
+}
+
+.myStyle {
+  width: 400px;
+  height: 50px;
+  background-color: #f2f2f2;
+  font-family: Arial;
+  padding: 10px;
+  color: black;
+  border-radius: 10px;
+}
+
+.myTitle {
+  color: #060b26;
+  margin-left: 80px;
+}
+
+.myButton {
+  background-color: #060b26;
+  color: white;
+  border-radius: 5px;
+  width: 200px;
+  height: 30px;
+  justify-content: center;
+  position: center;
+  margin-left: 100px;
+}
+.columns {
+  border: 1px solid #060b26;
+  border-radius: 15px 50px 30px;
+  box-shadow: 2px 2px 5px #060b26;
+  width: 250px;
+}
+
+
+
+
+.cal{
+
+  margin: 0;
+  padding: 0;
+  /*width: 40px;*/
+  list-style: none;
+  float:left;
+  
+
+}
+.clendar-wrapper{
+  /*float: left;*/
+
+  /*background-image: url("../img/table_bg.png");*/
+  background-position: 0 -58px;
+  /*float: left;*/
+}
+.clendar-wrapper{
+  display: none;
+
+  display: none;
+  width: 100%;
+  max-height:350px;   overflow-x:hidden ;   padding-bottom:10px; 
+}
+.table-responsive {
+  width:100%;
+  /*border:1px solid red;*/
+  background-color: #3a14e0;
+  overflow: visible;
+}
+
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  .clendar-wrapper{ 
+      width: 100%;
+      height:auto;   
+  } /* your css rules for ipad portrait */
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  .clendar-wrapper{   
+      /*width: 100%;*/
+      height:auto;   
+
+  } /* your css rules for ipad landscape */
+}
+
+.cal-1{
+  display: block;
+}
+.prev-table{
+  display: none;
+}
+
+.login_register a {
+  color:white;
+}
+
+.calen-title {
+  background-color: #D9E8F4 !important;
+}
+
+
+
+.cal li{
+  padding: 8px;
+  border: 1px solid #ddd;
+  
+}
+
+
+.percentage:after {
+  content: "";
+  display: block;
+  background-color: #3d9970;
+}
+.percentage-20:after {
+  width: 20%;
+}
+.percentage-30:after {
+  width: 30%;
+}
+.percentage {
+  background: repeating-linear-gradient(
+    to right,
+    rgb(61, 59, 59),
+    #ddd 1px,
+    #fff 1px,
+    #fff 5%
+  );
+}
+
+input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #080e63;
+  color: white;
+  width:100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #9b95f1;
+}
+
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+ 
+
+
+
+
+
+
+
