@@ -52,6 +52,7 @@ class Signup extends Component {
       .then((res) => console.log(res))
       .catch((err) => {
         alert("Error in creating an account: " + err);
+     
       });
   };
   constructor(props) {

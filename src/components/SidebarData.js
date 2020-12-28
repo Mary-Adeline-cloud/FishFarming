@@ -1,6 +1,6 @@
 import React from "react";
 import * as IoIcons from "react-icons/io";
-import * as AiIcons from "react-icons/ai";
+
 
 export const SidebarData = [
   {
@@ -10,7 +10,7 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "User",
+    title: "Login",
     path: "/",
     icon: <IoIcons.IoIosContact />,
     cName: "nav-text",
@@ -71,5 +71,8 @@ export const SidebarData = [
     cName: "nav-text",
     class: "menuToggle",
   },
+
+  
+
 
 ];

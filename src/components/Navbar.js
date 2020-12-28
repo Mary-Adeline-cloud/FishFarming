@@ -7,6 +7,7 @@ import { SidebarData } from "./SidebarData";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
 
+
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
@@ -20,12 +21,16 @@ function Navbar() {
             <faIcons.FaBars onClick={showSidebar} />
           </Link>
           <div class="row">
-            <div class="col-8">
-              <p style={{ color: "white"}}>SMART FISH FARMING</p>
+            <div class="col-4">
+              <p style={{ color: "white" }}>SMART FISH FARMING</p>
             </div>
 
             <div class="col-4">
               <FaIcons.FaFish class="logo" style={{ color: "white" }} />
+             
+            </div>
+            <div class="col-4">
+             
             </div>
           </div>
         </div>
@@ -33,7 +38,9 @@ function Navbar() {
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
+              
                 <GiIcons.GiCancel />
+                
               </Link>
             </li>
             {SidebarData.map((item, index) => {

@@ -1,144 +1,90 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
-import { Link } from "react-router-dom";
 
+import Footer from "./Footer";
 
 export default class AboutUs extends React.Component {
   state = {};
 
   render() {
     return (
-        <>
-      
-        <div class="jumbotron text-center" style={{ marginBottom: "0", background:"	 #ccccff", position:'static' }}>
-        <FaIcons.FaFish class="logo" style={{ color: "black" }} />
-          <h1>SMART FISH Farming</h1>
-          <p>HOME WELLNESS</p>
+      <>
+        <div
+          class="jumbotron text-center"
+          style={{
+            marginBottom: "0",
+            background: "	 #ccccff",
+            position: "static",
+          }}
+        >
+          <FaIcons.FaFish class="logo" style={{ color: "black" }} />
+          <h1>Smart Fish Farming</h1>
+          <p>AQUA WELLNESS AND FRESHNESS</p>
         </div>
 
         <div class="container">
-          <div class="row" style={{position:"static"}}>
-            <div class="col-sm-4" style={{position:"static"}}>
-              <h2>About Us</h2>
+          <div class="row" style={{ position: "static" }}>
+            <div
+              class="col-sm-4"
+              style={{ position: "static", background: "white" }}
+            >
+              <h2 style={{ color: "darkblue" }}>About Us</h2>
               <h5>What we do!:</h5>
-              <div class="fakeimg"><img src="fish.png" style={{width:"300px", height:"200px"}}/></div>
-              <p>
-                Some text about me in culpa qui officia deserunt mollit anim..
+              <div class="fakeimg">
+                <img class="img-thumbnail" src="fish.png" />
+              </div>
+              <p style={{ alignContent: "center" }}>
+                The areas of Rwanda best suited for cultivation of fish are the
+                flat valley bottoms with very gentle slopes, which lend
+                themselves to easy construction of ponds. Most existing ponds
+                are in such areas. Water supply would not be a constraint.
+                Records of air temperatures suggest that in some places the
+                temperature of the water may drop below 10° to 12°C for a
+                sufficiently long time to cause mortalities of fish of such
+                species as Tilapia rendalli, T. mossambica and T. nilotica,
+                although the Mission is not aware of any actual incidents of
+                this kind. When water temperatures are below 17° to 18°C in
+                June, July and August, tilapia will not spawn and growth rates
+                will be poor. It will, therefore, have to be accepted that
+                fingerlings will not be available for three months in the year
+                and the main growing season will be from September to the end of
+                May.
               </p>
-              <h3>Some Links</h3>
-              <p>Lorem ipsum dolor sit ame.</p>
+              <h5>Published News</h5>
+
               <ul class="nav nav-pills nav-stacked">
                 <li class="active">
-                  <a href="#">Link 1</a>
-                </li>
-                
-                <li>
-                  <a href="#">Link 2</a>
-                </li>
-                <li>
-                  <a href="#">Link 3</a>
+                  <a href="/DataView">DataView</a>
                 </li>
               </ul>
               <hr class="hidden-sm hidden-md hidden-lg" />
             </div>
             <div class="col-sm-8">
-              <h2>TITLE HEADING</h2>
-              <h5>Title description, Dec 7, 2017</h5>
-              <div class="fakeimg">Fake Image</div>
-              <p>Some text..</p>
+              <h2 style={{ color: "darkblue" }}>Let it shine!</h2>
+              <h5>We make the impossible possible.Through our mission.</h5>
+              <img src="cookedfish.jpg" class="img-fluid" />
+              <p>What we aim!</p>
               <p>
-                Sunt in culpa qui officia deserunt mollit anim id est laborum
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco.
+                We aim for the efficiency in fish production in Rwanda. Our
+                vision is to boost fish products in Rwanda in hands with the
+                focus of presenting poverty and children malnutrition.
               </p>
               <br />
-              <h2>TITLE HEADING</h2>
-              <h5>Title description, Sep 2, 2017</h5>
-              <div class="fakeimg">Fake Image</div>
-              <p>Some text..</p>
+              <h2 style={{ color: "darkblue" }}> IoT based devices</h2>
+              <h5>No more waiting, you can recieve data now!</h5>
+              <img src="sensor.jpg" class="img-fluid" />
               <p>
-                Sunt in culpa qui officia deserunt mollit anim id est laborum
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco.
+                IoT based device that can measure water quality and aqua life!
+              </p>
+              <p>
+                The use of temperature sensor, oxygen meter and a ph meter, a
+                farmer can detect water quality and take some actions after.
               </p>
             </div>
           </div>
         </div>
         <div class="container">
-        <div class="row" style={{ backgroundColor: "lightgray" }}>
-          <div class="col-sm" style={{ position: "static" }}>
-            <ul>
-              <dt>
-                {" "}
-                <a href="/Services" style={{ color: "#060b26" }}>
-                  Device status!
-                </a>
-              </dt>
-              <dt>
-                <a href="/Signup" style={{ color: "#060b26" }}>
-                  New Account
-                </a>
-              </dt>
-              <dt>
-                <a href="/Services" style={{ color: "#060b26" }}>
-                  reports
-                </a>
-              </dt>
-              <dt>
-                <a href="/Dataview" style={{ color: "#060b26" }}>
-                  Monthly data
-                </a>
-              </dt>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <dt style={{ color: "#060b26" }}>
-                <FaIcons.FaFish class="logo" style={{ color: "black" }} />
-              </dt>
-
-              <dt style={{ color: "#060b26" }}>
-                <p>Smart fish farming</p>
-              </dt>
-              <dt style={{ color: "#060b26" }}>
-                <p style={{ color: "red", textAlign: "start" }}>"IoT"</p>
-              </dt>
-              <dt style={{ color: "#060b26" }}>@copyright</dt>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <dt style={{ color: "#060b26" }}>
-                <Link to="#" className="menu-bars">
-                  <AiIcons.AiFillPhone />
-                </Link>
-                +250788443388
-              </dt>
-              <dt style={{ color: "#060b26" }}>
-                <Link to="#" className="menu-bars">
-                  <AiIcons.AiOutlineMail />
-                </Link>
-                info@fishfarming.com
-              </dt>
-              <dt style={{ color: "#060b26" }}>
-                <Link to="#" className="menu-bars">
-                  <IoIcons.IoLogoFacebook />
-                </Link>
-                Smart Fish Farming 
-              </dt>
-              <dt style={{ color: "#060b26" }}>
-                <Link to="#" className="menu-bars">
-                  <IoIcons.IoLogoInstagram />
-                </Link>
-                SmartFishFarming
-              </dt>
-            </ul>
-          </div>
-        </div>
+          <Footer />
         </div>
       </>
     );

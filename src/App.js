@@ -1,41 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import User from "./pages/User";
+import Login from "./Users/Login";
 import Dashboard from "./pages/Dashboard";
-import Signup from "./pages/Signup";
+import Signup from "./Users/Signup";
 import Help from "./pages/Help";
 import Search from "./pages/Search";
 import ResetPassword from "./pages/ResetPassword";
-import map from "./pages/map";
 import DataView from "./pages/DataView";
-import gauge from "./pages/gauge";
-import post from "./pages/post"
-import LineChart from "./pages/LineChart";
-import postRequest from "./pages/postRequest";
+import LineChart from "./Charts_Gauges/LineChart";
+import BarChart from "./Charts_Gauges/BarChart";
+import GetTemperatureData from "./Charts_Gauges/GetTemperatureData";
+import GetPhData from "./Charts_Gauges/GetPhData";
+import GetOxygenData from "./Charts_Gauges/GetOxygenData";
 import AboutUs from "./pages/AboutUs";
+import Footer from "./pages/Footer";
+
+import {ProtectedRoute} from "./pages/ProtectedRoute"
 
 function App() {
+  // const [token, setToken] = useState();
+
+  // if (!token) {
+  //   return <Login setToken={setToken} />;
+  // }
   return (
     <>
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/" exact component={User} />
-          <Route path="/dashboard" exact component={Dashboard} />
+          <Route  exact path="/"  component={Login} />
+          <ProtectedRoute path="/dashboard" component={Dashboard} />
+           <Route path="***">
+             <h1>404 NOT FOUND</h1>
+           </Route>
           <Route path="/signup" component={Signup} />
           <Route path="/help" component={Help} />
           <Route path="/Search" component={Search} />
           <Route path="/ResetPassword" component={ResetPassword} />
-          <Route path="/map" component={map} />
           <Route path="/DataView" component={DataView} />
-          <Route path="/gauge" component={gauge} />
-          <Route path="/post" component={post} />
           <Route path="/LineChart" component={LineChart} />
-          <Route path="/postRequest" component={postRequest} />
+          <Route path="/BarChart" component={BarChart} />
+          <Route path="/GetTemperatureData" component={GetTemperatureData} />
+          <Route path="/GetPhData" component={GetPhData} />
+          <Route path="/GetOxygenData" component={GetOxygenData} />
           <Route path="/AboutUs" component={AboutUs} />
+          <Route path="/Footer" component={Footer} />
+          
         </Switch>
       </Router>
     </>
