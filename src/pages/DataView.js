@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "./login.css";
+
 
 class table extends React.Component {
   constructor(props) {

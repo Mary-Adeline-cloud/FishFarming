@@ -1,7 +1,6 @@
 import React from "react";
 import * as IoIcons from "react-icons/io";
 
-
 export const SidebarData = [
   {
     title: "Search",
@@ -24,8 +23,6 @@ export const SidebarData = [
     class: "menuToggle",
   },
 
-
-
   {
     title: "Data-View",
     path: "/DataView",
@@ -45,34 +42,8 @@ export const SidebarData = [
   {
     title: "AboutUs",
     path: "/AboutUs",
-    icon: <IoIcons.IoMdDoneAll/>,
+    icon: <IoIcons.IoMdDoneAll />,
     cName: "nav-text",
     class: "menuToggle",
   },
-  {
-    title: "gauge",
-    path: "/gauge",
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: "nav-text",
-    class: "menuToggle",
-  },
-  {
-    title: "post",
-    path: "/post",
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: "nav-text",
-    class: "menuToggle",
-  },
-
-  {
-    title: "postRequest",
-    path: "/postRequest",
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: "nav-text",
-    class: "menuToggle",
-  },
-
-  
-
-
 ];

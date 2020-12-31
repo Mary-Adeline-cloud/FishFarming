@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Login from "./Users/Login";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./Users/Signup";
@@ -17,30 +17,21 @@ import GetPhData from "./Charts_Gauges/GetPhData";
 import GetOxygenData from "./Charts_Gauges/GetOxygenData";
 import AboutUs from "./pages/AboutUs";
 import Footer from "./pages/Footer";
+import { ProtectedRoute } from "./pages/ProtectedRoute";
 
-import {ProtectedRoute} from "./pages/ProtectedRoute"
-
-function App() {
-  // const [token, setToken] = useState();
-
-  // if (!token) {
-  //   return <Login setToken={setToken} />;
-  // }
+function App() {  
   return (
-    <>
+    <>   
       <Router>
         <Navbar />
         <Switch>
-          <Route  exact path="/"  component={Login} />
+          <Route exact path="/" component={Login} />
           <ProtectedRoute path="/dashboard" component={Dashboard} />
-           <Route path="***">
-             <h1>404 NOT FOUND</h1>
-           </Route>
           <Route path="/signup" component={Signup} />
-          <Route path="/help" component={Help} />
+          <ProtectedRoute path="/help" component={Help} />
           <Route path="/Search" component={Search} />
           <Route path="/ResetPassword" component={ResetPassword} />
-          <Route path="/DataView" component={DataView} />
+          <ProtectedRoute path="/DataView" component={DataView} />
           <Route path="/LineChart" component={LineChart} />
           <Route path="/BarChart" component={BarChart} />
           <Route path="/GetTemperatureData" component={GetTemperatureData} />
@@ -48,7 +39,9 @@ function App() {
           <Route path="/GetOxygenData" component={GetOxygenData} />
           <Route path="/AboutUs" component={AboutUs} />
           <Route path="/Footer" component={Footer} />
-          
+          <Route path="***">
+            <h1>404 NOT FOUND</h1>
+          </Route>
         </Switch>
       </Router>
     </>

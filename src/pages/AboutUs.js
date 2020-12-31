@@ -1,8 +1,6 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
-
 import Footer from "./Footer";
-
 export default class AboutUs extends React.Component {
   state = {};
 

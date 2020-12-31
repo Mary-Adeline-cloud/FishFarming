@@ -1,15 +1,11 @@
 import React from "react";
-import "./login.css";
+import "./styles.css";
 import * as IoIcons from "react-icons/io";
 import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import { Link } from "react-router-dom";
-
 import "react-datetime/css/react-datetime.css";
 import LineChart from "../Charts_Gauges/LineChart";
 import BarChart from "../Charts_Gauges/BarChart";
 import Footer from "./Footer";
-
 import GetTemperatureData from "../Charts_Gauges/GetTemperatureData";
 import GetPhData from "../Charts_Gauges/GetPhData";
 import GetOxygenData from "../Charts_Gauges/GetOxygenData";
@@ -67,6 +63,7 @@ function Dashboard(props) {
                   Temperature is a physical quantity that expresses hot and cold
                   in a substance.
                 </p>
+                
                 <GetTemperatureData />
               </div>
             </div>
