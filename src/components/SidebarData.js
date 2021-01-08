@@ -2,22 +2,18 @@ import React from "react";
 import * as IoIcons from "react-icons/io";
 
 export const SidebarData = [
+  
+  
   {
-    title: "Search",
-    path: "/Search",
-    icon: <IoIcons.IoIosSearch />,
-    cName: "nav-text",
-  },
-  {
-    title: "Login",
-    path: "/",
-    icon: <IoIcons.IoIosContact />,
+    title: "Dashboard",
+    path: "/dashboard",
+    icon: <IoIcons.IoIosBasket />,
     cName: "nav-text",
     class: "menuToggle",
   },
   {
-    title: "Dashboard",
-    path: "/dashboard",
+    title: "Search",
+    path: "/Search",
     icon: <IoIcons.IoIosBasket />,
     cName: "nav-text",
     class: "menuToggle",
@@ -42,6 +38,14 @@ export const SidebarData = [
   {
     title: "AboutUs",
     path: "/AboutUs",
+    icon: <IoIcons.IoMdDoneAll />,
+    cName: "nav-text",
+    class: "menuToggle",
+  },
+
+  {
+    title: "Profile",
+    path: "/Profile",
     icon: <IoIcons.IoMdDoneAll />,
     cName: "nav-text",
     class: "menuToggle",

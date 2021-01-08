@@ -51,7 +51,7 @@ class Signup extends Component {
       .post("https://pure-cliffs-73224.herokuapp.com/api/user/v2/", data)
       .then((res) => console.log(res))
       .catch((err) => {
-        alert("Error in creating an account: " + err);
+        alert("password must have 8 characters including capital, small letters and apecial characters " + err);
      
       });
   };
@@ -94,18 +94,17 @@ class Signup extends Component {
               position: "static",
             }}
           >
-            <h5 style={{ textAlign: "center" }}>Register</h5>
+            <p style={{ textAlign: "center" }}>REGISTER HERE</p>
           </div>
         </div>
         <form
           className="post"
           onSubmit={this.handleSubmit}
-          style={{ marginLeft: "22px" }}
+          
         >
-          <p style={{ color: "#060b26", textAlign: "center" }}>
-            SMART FISH FARMING
-          </p>
+         
           <input
+          class="form-control mb-2"
             placeholder="first-name"
             type="text"
             value={this.state.firstName}
@@ -113,6 +112,7 @@ class Signup extends Component {
             required
           />
           <input
+          class="form-control mb-2"
             type="text"
             placeholder="last-name"
             value={this.state.lastName}
@@ -120,6 +120,7 @@ class Signup extends Component {
             required
           />
           <input
+          class="form-control mb-2"
             type="email"
             placeholder="email"
             value={this.state.email}
@@ -128,6 +129,7 @@ class Signup extends Component {
           />
 
           <input
+          class="form-control mb-2"
             placeholder="password"
             type="password"
             type={this.state.hidden ? "password" : "text"}
@@ -139,13 +141,14 @@ class Signup extends Component {
           <p>Show Password</p>
 
           <input
+          class="form-control mb-2"
             type="text"
             placeholder="location"
             value={this.state.location}
             onChange={this.onlocationChange}
             required
           />
-          <div class="row">
+          <div class="form-row">
           <input
             type="submit"
             value="Register"

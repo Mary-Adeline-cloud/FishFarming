@@ -2,18 +2,22 @@ import React from "react";
 import axios from "axios";
 import Thermometer from "react-thermometer-component";
 
+
+const url = "https://pure-cliffs-73224.herokuapp.com/api/sensor/v2/521";
+
 class GetTemperatureData extends React.Component {
   state = {
     sensor: {},
-    asyncData: {},
   };
-  getDetailUser() {
+  componentDidMount() {
     axios
-      .get("https://pure-cliffs-73224.herokuapp.com/api/sensor/v2/529")
+      //retrieving one sensor data
+      .get(url)
       .then((response) => {
-        console.log(response.data.data.foundSensor);
+        //displaying results on the UI
+        console.log(response.data.data);
         this.setState({
-          sensor: response.data.data,
+          sensor: response.data.data.foundSensor,
         });
       })
       .catch((err) => {
@@ -26,31 +30,19 @@ class GetTemperatureData extends React.Component {
 
     return (
       <div>
-        <input
-          type="radio"
-          value="data"
-          onClick={this.getDetailUser.bind(this, 1)}
-        />
-        <label for="data"> °C details</label>
-
-        <div>
-          {sensor &&
-            Object.keys(sensor).map((item) => (
-              <>
-                <p>value is: {sensor[item].temperatureSensor}</p>
-
-                <Thermometer
-                  theme="light"
-                  value={sensor[item].temperatureSensor}
-                  max="100"
-                  steps="3"
-                  format="°C"
-                  size="normal"
-                  height="200"
-                />
-              </>
-            ))}
-        </div>
+        {
+          <>
+            <Thermometer
+              theme="light"
+              value={sensor.temperatureSensor}
+              max="100"
+              steps="3"
+              format="°C"
+              size="normal"
+              height="200"
+            />
+          </>
+        }
       </div>
     );
   }

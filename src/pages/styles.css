@@ -1,13 +1,11 @@
 body {
  background-color:lightgray;
+ padding: 0%;
 }
 .container{
   background-color: #f2f2f2;
 }
-.card{
-border-radius: 15px;
 
-}
 
 .login {
   padding: 60px 0;
@@ -273,6 +271,29 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
+.bottom-container {
+  text-align: center;
+  color: black;
+  border-radius: 0px 0px 4px 4px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+
 
  
 

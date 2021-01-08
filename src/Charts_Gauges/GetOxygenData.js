@@ -2,19 +2,21 @@ import React from "react";
 import axios from "axios";
 import Thermometer from "react-thermometer-component";
 
+const url = "https://pure-cliffs-73224.herokuapp.com/api/sensor/v2/512";
+
 class GetOxygenData extends React.Component {
   state = {
     sensor: {},
-    asyncData: {},
-
   };
-  getDetailUser() {
+  componentDidMount() {
     axios
-      .get("https://pure-cliffs-73224.herokuapp.com/api/sensor/v2/345")
+      //retrieving one sensor data
+      .get(url)
       .then((response) => {
-        console.log(response.data.data.foundSensor);
+        //displaying results on the UI
+        console.log(response.data.data);
         this.setState({
-          sensor: response.data.data,
+          sensor: response.data.data.foundSensor,
         });
       })
       .catch((err) => {
@@ -27,31 +29,21 @@ class GetOxygenData extends React.Component {
 
     return (
       <div>
-        <input
-          type="radio"
-          value="data"
-          onClick={this.getDetailUser.bind(this, 1)}
-        />
-        <label for="data">Oxygen details(mg/L)</label>
-
-        <div>
-          {sensor &&
-            Object.keys(sensor).map((item) => (
-              <>
-              <p>Value is: {sensor[item].oxygenSensor}</p>
-             
-               <Thermometer
-                  theme="light"
-                  value={sensor[item].oxygenSensor}
-                  max="15"
-                  steps="3"
-                //   format="°C"
-                  size="normal"
-                  height="200"
-                />
-              </>
-            ))}
-        </div>
+        {
+          <>
+          
+            <Thermometer
+              theme="light"
+              value={sensor.oxygenSensor}
+              max="100"
+              steps="3"
+              format="mg/l"
+              size="normal"
+              height="200"
+            />
+          
+          </>
+        }
       </div>
     );
   }

@@ -1,22 +1,34 @@
-import React from "react";
-import "./Search.css";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import Pagination from "react-js-pagination";
 
-function Search() {
-  return (
-    <div class="container">
-      <div class="col-12" style={{position:"static"}}>
-        <form style={{ marginLeft:"30px"}}>
-          <input
-            type="text"
-            className="input1"
-            name="search"
-            placeholder="Search.."
-            style={{position:"static"}}
-          />
-        </form>
+class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activePage: 15,
+    };
+  }
+
+  handlePageChange(pageNumber) {
+    console.log(`active page is ${pageNumber}`);
+    this.setState({ activePage: pageNumber });
+  }
+
+  render() {
+    return (
+      <div>
+        <Pagination
+          activePage={this.state.activePage}
+          itemsCountPerPage={10}
+          totalItemsCount={450}
+          pageRangeDisplayed={5}
+          onChange={this.handlePageChange.bind(this)}
+        />
       </div>
-    </div>
-  );
+    );
+  }
 }
 
+ReactDOM.render(<Search />, document.getElementById("root"));
 export default Search;

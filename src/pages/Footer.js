@@ -4,13 +4,13 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-class Footer  extends React.Component{
-    state = {  }
-    render() { 
-        return (  
-
-<div class="row" style={{ backgroundColor: "lightgray" }}>
-          <div class="col-sm" style={{ position: "static" }}>
+class Footer extends React.Component {
+  state = {};
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row" style={{ backgroundColor: "lightgray" }}>
+          <div className="col-sm" style={{ position: "static" }}>
             <ul>
               <dt>
                 {" "}
@@ -35,10 +35,10 @@ class Footer  extends React.Component{
               </dt>
             </ul>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <ul>
               <dt style={{ color: "#060b26" }}>
-                <FaIcons.FaFish class="logo" style={{ color: "black" }} />
+                <FaIcons.FaFish className="logo" style={{ color: "black" }} />
               </dt>
 
               <dt style={{ color: "#060b26" }}>
@@ -50,7 +50,7 @@ class Footer  extends React.Component{
               <dt style={{ color: "#060b26" }}>@copyright</dt>
             </ul>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <ul>
               <dt style={{ color: "#060b26" }}>
                 <Link to="#" className="menu-bars">
@@ -79,10 +79,9 @@ class Footer  extends React.Component{
             </ul>
           </div>
         </div>
-
-
-        );
-    }
+      </div>
+    );
+  }
 }
- 
-export default Footer ;
+
+export default Footer;

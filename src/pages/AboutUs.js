@@ -8,14 +8,14 @@ export default class AboutUs extends React.Component {
     return (
       <>
         <div
-          class="jumbotron text-center"
+          className="jumbotron text-center"
           style={{
             marginBottom: "0",
             background: "	 #ccccff",
             position: "static",
           }}
         >
-          <FaIcons.FaFish class="logo" style={{ color: "black" }} />
+          <FaIcons.FaFish className="logo" style={{ color: "black" }} />
           <h1>Smart Fish Farming</h1>
           <p>AQUA WELLNESS AND FRESHNESS</p>
         </div>
@@ -23,13 +23,13 @@ export default class AboutUs extends React.Component {
         <div class="container">
           <div class="row" style={{ position: "static" }}>
             <div
-              class="col-sm-4"
+              className="col-sm-4"
               style={{ position: "static", background: "white" }}
             >
               <h2 style={{ color: "darkblue" }}>About Us</h2>
               <h5>What we do!:</h5>
-              <div class="fakeimg">
-                <img class="img-thumbnail" src="fish.png" />
+              <div className="fakeimg">
+                <img className="img-thumbnail" src="fish.png" />
               </div>
               <p style={{ alignContent: "center" }}>
                 The areas of Rwanda best suited for cultivation of fish are the
@@ -50,17 +50,17 @@ export default class AboutUs extends React.Component {
               </p>
               <h5>Published News</h5>
 
-              <ul class="nav nav-pills nav-stacked">
-                <li class="active">
+              <ul className="nav nav-pills nav-stacked">
+                <li className="active">
                   <a href="/DataView">DataView</a>
                 </li>
               </ul>
-              <hr class="hidden-sm hidden-md hidden-lg" />
+              <hr className="hidden-sm hidden-md hidden-lg" />
             </div>
-            <div class="col-sm-8">
+            <div className="col-sm-8">
               <h2 style={{ color: "darkblue" }}>Let it shine!</h2>
               <h5>We make the impossible possible.Through our mission.</h5>
-              <img src="cookedfish.jpg" class="img-fluid" />
+              <img src="cookedfish.jpg" className="img-fluid" />
               <p>What we aim!</p>
               <p>
                 We aim for the efficiency in fish production in Rwanda. Our
@@ -70,7 +70,7 @@ export default class AboutUs extends React.Component {
               <br />
               <h2 style={{ color: "darkblue" }}> IoT based devices</h2>
               <h5>No more waiting, you can recieve data now!</h5>
-              <img src="sensor.jpg" class="img-fluid" />
+              <img src="sensor.jpg" className="img-fluid" />
               <p>
                 IoT based device that can measure water quality and aqua life!
               </p>
@@ -81,7 +81,7 @@ export default class AboutUs extends React.Component {
             </div>
           </div>
         </div>
-        <div class="container">
+        <div className="container">
           <Footer />
         </div>
       </>
