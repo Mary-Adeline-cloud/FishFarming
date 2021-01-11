@@ -75,7 +75,9 @@ class DataView extends React.Component {
             </div>
           </>
         ) : (
-          <></>
+          <>
+          <LoadingBar/>
+          </>
         )}
       </>
     );
