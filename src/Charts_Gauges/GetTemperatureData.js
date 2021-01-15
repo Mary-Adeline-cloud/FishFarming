@@ -1,50 +1,34 @@
-import React from "react";
+import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import Thermometer from "react-thermometer-component";
+import TemperaturePosts from "./TemperaturePosts"
 
+const GetTemperatureData =() =>{
+    const [posts, setPosts] = useState ([]);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(1);
 
-const url = "https://pure-cliffs-73224.herokuapp.com/api/sensor/v2/521";
+    useEffect(()=>{
+    const fetchPosts= async  () =>{
+        setLoading(true);
+        const res = await axios.get("https://pure-cliffs-73224.herokuapp.com/api/descend/v2/");
+        setPosts(res.data.data.sensorByOrder);
+        setLoading(false);
+    }
+    fetchPosts();
+    
+    }, []);
 
-class GetTemperatureData extends React.Component {
-  state = {
-    sensor: {},
-  };
-  componentDidMount() {
-    axios
-      //retrieving one sensor data
-      .get(url)
-      .then((response) => {
-        //displaying results on the UI
-        console.log(response.data.data);
-        this.setState({
-          sensor: response.data.data.foundSensor,
-        });
-      })
-      .catch((err) => {
-        alert("Error get sensor detail: " + err);
-      });
-  }
+    //get the current post
 
-  render() {
-    const { sensor } = this.state;
+    const  indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts. slice (indexOfFirstPost, indexOfLastPost);
+    return(
+        <div className="container">
+         <TemperaturePosts posts={currentPosts} loading={loading} />
+        </div>
+    )
 
-    return (
-      <div>
-        {
-          <>
-            <Thermometer
-              theme="light"
-              value={sensor.temperatureSensor}
-              max="100"
-              steps="3"
-              format="°C"
-              size="normal"
-              height="200"
-            />
-          </>
-        }
-      </div>
-    );
-  }
 }
 export default GetTemperatureData;

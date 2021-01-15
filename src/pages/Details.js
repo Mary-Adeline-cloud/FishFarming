@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import OxygenPosts from "./OxygenPosts"
+import Posts from "./Posts";
+import Pagination from "./Pagination";
 
-const GetOxygenData =() =>{
+const Details =() =>{
     const [posts, setPosts] = useState ([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(1);
+    const [postsPerPage] = useState(30);
 
     useEffect(()=>{
     const fetchPosts= async  () =>{
@@ -24,11 +25,17 @@ const GetOxygenData =() =>{
     const  indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = posts. slice (indexOfFirstPost, indexOfLastPost);
+
+    //change page number
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     return(
         <div className="container">
-         <OxygenPosts posts={currentPosts} loading={loading} />
+         <Posts posts={currentPosts} loading={loading} />
+         <Pagination  postsPerPage={postsPerPage} totalPosts = {posts.length} paginate={paginate}/>
         </div>
     )
 
 }
-export default GetOxygenData;
+export default Details;

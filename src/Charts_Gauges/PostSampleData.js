@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import OxygenPosts from "./OxygenPosts"
+import SampleData from "./SampleData"
 
-const GetOxygenData =() =>{
+const PostSampleData =() =>{
     const [posts, setPosts] = useState ([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(5);
 
     useEffect(()=>{
     const fetchPosts= async  () =>{
@@ -26,9 +26,9 @@ const GetOxygenData =() =>{
     const currentPosts = posts. slice (indexOfFirstPost, indexOfLastPost);
     return(
         <div className="container">
-         <OxygenPosts posts={currentPosts} loading={loading} />
+         <SampleData posts={currentPosts} loading={loading} />
         </div>
     )
 
 }
-export default GetOxygenData;
+export default PostSampleData;

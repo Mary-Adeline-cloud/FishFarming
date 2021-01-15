@@ -1,101 +1,34 @@
-import React from "react";
+import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import Thermometer from "react-thermometer-component";
+import PhPosts from "./PhPosts"
 
-const url = "https://pure-cliffs-73224.herokuapp.com/api/sensor/v2/512";
+const GetPhData =() =>{
+    const [posts, setPosts] = useState ([]);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(1);
 
-class GetPhData extends React.Component {
-  state = {
-    sensor: {},
-  };
+    useEffect(()=>{
+    const fetchPosts= async  () =>{
+        setLoading(true);
+        const res = await axios.get("https://pure-cliffs-73224.herokuapp.com/api/descend/v2/");
+        setPosts(res.data.data.sensorByOrder);
+        setLoading(false);
+    }
+    fetchPosts();
+    
+    }, []);
 
-  componentDidMount() {
-    axios
-      //retrieving one sensor data
-      .get(url)
-      .then((response) => {
-        //displaying results on the UI
-        console.log(response.data.data);
-        this.setState({
-          sensor: response.data.data.foundSensor,
-        });
-      })
-      .catch((err) => {
-        alert("Error get sensor detail: " + err);
-      });
-  }
+    //get the current post
 
-  render() {
-    const { sensor } = this.state;
+    const  indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts. slice (indexOfFirstPost, indexOfLastPost);
+    return(
+        <div className="container">
+         <PhPosts posts={currentPosts} loading={loading} />
+        </div>
+    )
 
-    return (
-      <div>
-        {
-          <>
-            <Thermometer
-             style={{position:'static'}}
-              theme="light"
-              value={sensor.phSensor}
-              max="14"
-              steps="3"
-              //format="°C"
-              size="normal"
-              height="200"
-            />
-          </>
-        }
-      </div>
-    );
-  }
 }
 export default GetPhData;
-
-// import React from "react";
-// import axios from "axios";
-// import Thermometer from "react-thermometer-component";
-
-// class GetPhData extends React.Component {
-//   state = {
-//     sensor: {},
-//   };
-//   getDetailUser() {
-//     axios
-//       //retrieving one sensor data
-//       .get("https://pure-cliffs-73224.herokuapp.com/api/sensor/v2")
-//       .then((response) => {
-//         //displaying results on the UI
-//         this.setState({
-//           sensor: response.data.sensor,
-//         });
-//       })
-//       .catch((err) => {
-//         alert("Error get sensor detail: " + err);
-//       });
-//   }
-
-//   render() {
-//     const { sensor } = this.state;
-
-//     return (
-//       <div>
-//         <div>
-//           {
-//             <>
-//             <span>id:{sensor.id}</span>
-//               <Thermometer
-//                 theme="light"
-//                 value={sensor.phSensor}
-//                 max="14"
-//                 steps="3"
-//                 //   format="°C"
-//                 size="normal"
-//                 height="200"
-//               />
-//             </>
-//           }
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-// export default GetPhData;

@@ -11,17 +11,11 @@ export const SidebarData = [
     cName: "nav-text",
     class: "menuToggle",
   },
-  {
-    title: "Search",
-    path: "/Search",
-    icon: <IoIcons.IoIosBasket />,
-    cName: "nav-text",
-    class: "menuToggle",
-  },
-
+  
+ 
   {
     title: "Data-View",
-    path: "/DataView",
+    path: "/Details",
     icon: <IoIcons.IoIosAlbums />,
     cName: "nav-text",
     class: "menuToggle",

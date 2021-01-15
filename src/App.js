@@ -16,8 +16,8 @@ import GetPhData from "./Charts_Gauges/GetPhData";
 import GetOxygenData from "./Charts_Gauges/GetOxygenData";
 import AboutUs from "./pages/AboutUs";
 import Footer from "./pages/Footer";
-import Search from "./pages/Search";
 import { ProtectedRoute } from "./pages/ProtectedRoute";
+import Details from "./pages/Details";
 
 function App() {
   return (
@@ -38,8 +38,10 @@ function App() {
           <Route path="/GetOxygenData" component={GetOxygenData} />
           <Route path="/AboutUs" component={AboutUs} />
           <Route path="/Footer" component={Footer} />
-          <Route path="/Search" component={Search} />
           <Route path="/Header" component={Header} />
+          <Route path="/Details"  component={Details} />
+          
+  
           <Route path="***">
             <h1>404 NOT FOUND</h1>
           </Route>
